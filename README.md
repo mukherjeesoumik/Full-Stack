@@ -195,7 +195,7 @@ public class StudentApiApplication {
     }
 }
 ```
-🧠 Quick Summary of Layers
+### 🧠 Quick Summary of Layers
 
 Layer	Purpose
 
@@ -216,14 +216,23 @@ Main	Launches Spring Boot app
 
 
 ✅ Spring Boot Concepts Recap:
+
 Concept	Status	Description
+
 📁 Folder Structure	✅	Clean modular separation of layers
+
 🔹 Entity Layer	✅	Maps Java class to DB table
+
 🔸 DTO Layer	✅	Sends/receives safe, trimmed data
+
 🧩 Repository Layer	✅	Interface for CRUD DB access
+
 🛠 Service Layer	✅	Business logic & Entity-DTO conversion
+
 🌐 Controller Layer	✅	Exposes REST APIs
+
 ⚙️ Configuration	✅	application.properties for DB, CORS, etc.
+
 🚀 Main Class	✅	App starting point
 
 You now have a solid backend that can:
@@ -257,8 +266,8 @@ Simple Tailwind/Bootstrap UI
 
 Let’s go! 🎯
 
-🌐 React Project – Student Management UI
-🗂️ 1. Folder Structure (Vite + Axios + Tailwind)
+## 🌐 React Project – Student Management UI
+### 🗂️ 1. Folder Structure (Vite + Axios + Tailwind)
 pgsql
 ```cs
 student-ui/
@@ -277,8 +286,8 @@ student-ui/
 ```
 We’ll use Vite for fast bundling, Axios for HTTP requests, and Tailwind CSS for styling.
 
-✅ 2. Step-by-Step Setup
-🔧 2.1. Initialize Project with Vite + Tailwind
+ ✅ 2. Step-by-Step Setup
+### 🔧 2.1. Initialize Project with Vite + Tailwind
 bash
 ```cs
 npm create vite@latest student-ui --template react
@@ -288,7 +297,7 @@ npm install axios
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
-🛠️ 2.2. tailwind.config.js
+### 🛠️ 2.2. tailwind.config.js
 js
 ```cs
 /** @type {import('tailwindcss').Config} */
@@ -303,7 +312,7 @@ export default {
   plugins: [],
 };
 ```
-📄 2.3. Add Tailwind to index.css
+### 📄 2.3. Add Tailwind to index.css
 css
 ```cs
 /* src/index.css */
@@ -311,7 +320,7 @@ css
 @tailwind components;
 @tailwind utilities;
 ```
-🧩 3. API Layer – src/api/studentApi.js
+### 🧩 3. API Layer – src/api/studentApi.js
 js
 ```cs
 import axios from 'axios';
@@ -326,7 +335,7 @@ export const fetchStudents = () => {
   return axios.get(BASE_URL);
 };
 ```
-🧾 4. Student Form – src/components/StudentForm.jsx
+### 🧾 4. Student Form – src/components/StudentForm.jsx
 jsx
 ```cs
 import React, { useState } from 'react';
@@ -371,7 +380,7 @@ const StudentForm = ({ onStudentAdded }) => {
 
 export default StudentForm;
 ```
-📋 5. Student List – src/components/StudentList.jsx
+### 📋 5. Student List – src/components/StudentList.jsx
 jsx
 ```cs
 import React, { useEffect, useState } from 'react';
@@ -400,7 +409,7 @@ const StudentList = ({ refresh }) => {
 
 export default StudentList;
 ```
-⚛️ 6. App.jsx – Connect Everything
+### ⚛️ 6. App.jsx – Connect Everything
 jsx
 ```cs
 import React, { useState } from 'react';
@@ -423,7 +432,7 @@ function App() {
 
 export default App;
 ```
-🏁 7. Run the Frontend
+### 🏁 7. Run the Frontend
 bash
 ```cs
 npm run dev
@@ -436,9 +445,15 @@ Then open: http://localhost:5173
 📜 Display list of students from Spring Boot backend.
 
 💡 Key Concepts Covered in React
+
 Concept	Description
+
 🧩 Axios	For HTTP API calls
+
 🔄 useEffect	Fetch students on load/refresh
+
 📥 useState	Manage form and data states
+
 🧱 Component-based	Form and list as separate components
+
 🎨 Tailwind CSS	Quick, clean UI
