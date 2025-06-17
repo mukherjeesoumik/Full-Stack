@@ -196,14 +196,24 @@ public class StudentApiApplication {
 }
 ```
 🧠 Quick Summary of Layers
+
 Layer	Purpose
+
 Entity	Maps class to DB table
+
 DTO	Transfers data between layers/frontends
+
 Repository	DB interaction using Spring JPA
+
 Service	Business logic, conversion DTO ↔ Entity
+
 Controller	REST API layer, handles HTTP requests
+
 Config	Application and DB configuration
+
 Main	Launches Spring Boot app
+
+
 
 ✅ Spring Boot Concepts Recap:
 Concept	Status	Description
@@ -250,8 +260,7 @@ Let’s go! 🎯
 🌐 React Project – Student Management UI
 🗂️ 1. Folder Structure (Vite + Axios + Tailwind)
 pgsql
-Copy
-Edit
+```cs
 student-ui/
 ├── src/
 │   ├── api/                   → Axios setup + API functions
@@ -265,23 +274,23 @@ student-ui/
 │   └── index.html
 ├── package.json
 ├── tailwind.config.js
+```
 We’ll use Vite for fast bundling, Axios for HTTP requests, and Tailwind CSS for styling.
 
 ✅ 2. Step-by-Step Setup
 🔧 2.1. Initialize Project with Vite + Tailwind
 bash
-Copy
-Edit
+```cs
 npm create vite@latest student-ui --template react
 cd student-ui
 npm install
 npm install axios
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
+```
 🛠️ 2.2. tailwind.config.js
 js
-Copy
-Edit
+```cs
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -293,18 +302,18 @@ export default {
   },
   plugins: [],
 };
+```
 📄 2.3. Add Tailwind to index.css
 css
-Copy
-Edit
+```cs
 /* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+```
 🧩 3. API Layer – src/api/studentApi.js
 js
-Copy
-Edit
+```cs
 import axios from 'axios';
 
 const BASE_URL = 'http://localhost:8080/api/students';
@@ -316,10 +325,10 @@ export const addStudent = (student) => {
 export const fetchStudents = () => {
   return axios.get(BASE_URL);
 };
+```
 🧾 4. Student Form – src/components/StudentForm.jsx
 jsx
-Copy
-Edit
+```cs
 import React, { useState } from 'react';
 import { addStudent } from '../api/studentApi';
 
@@ -361,10 +370,10 @@ const StudentForm = ({ onStudentAdded }) => {
 };
 
 export default StudentForm;
+```
 📋 5. Student List – src/components/StudentList.jsx
 jsx
-Copy
-Edit
+```cs
 import React, { useEffect, useState } from 'react';
 import { fetchStudents } from '../api/studentApi';
 
@@ -390,10 +399,10 @@ const StudentList = ({ refresh }) => {
 };
 
 export default StudentList;
+```
 ⚛️ 6. App.jsx – Connect Everything
 jsx
-Copy
-Edit
+```cs
 import React, { useState } from 'react';
 import StudentForm from './components/StudentForm';
 import StudentList from './components/StudentList';
@@ -413,11 +422,12 @@ function App() {
 }
 
 export default App;
+```
 🏁 7. Run the Frontend
 bash
-Copy
-Edit
+```cs
 npm run dev
+```
 Then open: http://localhost:5173
 
 ✅ Final Output:
