@@ -1,7 +1,7 @@
 # Full-Stack
 
-📘 Spring Boot – Student Management API (Backend)
-🗂️ 1. Folder Structure
+## 📘 Spring Boot – Student Management API (Backend)
+### 🗂️ 1. Folder Structure
 ```cs
 springboot-student-api/
 ├── src/
@@ -23,7 +23,7 @@ springboot-student-api/
 └── pom.xml                            → Project dependencies
 
 ```
-📄 2. Entity Layer
+### 📄 2. Entity Layer
 🔹 Purpose:
 Represents a database table.
 
@@ -47,7 +47,7 @@ public class Student {
     // Getters and Setters
 }
 ```
-📄 3. DTO (Data Transfer Object) Layer
+### 📄 3. DTO (Data Transfer Object) Layer
 🔹 Purpose:
 Used to send/receive data to/from frontend.
 
@@ -66,7 +66,7 @@ public class StudentDTO {
     // Getters and Setters
 }
 ```
-📄 4. Repository Layer
+### 📄 4. Repository Layer
 🔹 Purpose:
 Handles database operations like save(), findAll(), deleteById().
 
@@ -79,7 +79,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface StudentRepository extends JpaRepository<Student, Long> {}
 ```
-📄 5. Service Layer
+### 📄 5. Service Layer
 🔹 Purpose:
 Contains business logic.
 
@@ -123,7 +123,7 @@ public class StudentService {
     }
 }
 ```
-📄 6. Controller Layer
+### 📄 6. Controller Layer
 🔹 Purpose:
 Handles HTTP requests (GET, POST, etc).
 
@@ -162,7 +162,7 @@ public class StudentController {
     }
 }
 ```
-⚙️ 7. application.properties
+### ⚙️ 7. application.properties
 🔹 Purpose:
 Database connection configuration.
 
@@ -179,7 +179,7 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 server.port=8080
 ```
-🚀 8. Main Application File
+### 🚀 8. Main Application File
 ✅ StudentApiApplication.java
 java
 ```cs
