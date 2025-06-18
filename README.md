@@ -47,7 +47,7 @@ public class Student {
     // Getters and Setters
 }
 ```
-or for full ⤵️
+or for full ⤵️ < POST > < GET > < PUT > < DELETE >
 ```cs
 @RestController
 @RequestMapping("/api/students")
