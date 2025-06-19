@@ -47,49 +47,7 @@ public class Student {
     // Getters and Setters
 }
 ```
-or for full ⤵️ < GET - Retrieve data (Read) > < POST - Create new data > < PUT - Update existing data > < DELETE - Remove data >
-```cs
-@RestController
-@RequestMapping("/api/students")
-@CrossOrigin(origins = "http://localhost:3000")
-public class StudentController {
 
-    @Autowired
-    private StudentService service;
-
-    // POST - Add new student
-    @PostMapping
-    public Student addStudent(@RequestBody StudentDTO dto) {
-        return service.saveStudent(dto);
-    }
-
-    // GET - All students
-    @GetMapping
-    public List<StudentDTO> getAll() {
-        return service.getAllStudents();
-    }
-
-    // GET - Student by ID
-    @GetMapping("/{id}")
-    public StudentDTO getById(@PathVariable Long id) {
-        return service.getStudentById(id);
-    }
-
-    // PUT - Update student
-    @PutMapping("/{id}")
-    public Student updateStudent(@PathVariable Long id, @RequestBody StudentDTO dto) {
-        return service.updateStudent(id, dto);
-    }
-
-    // DELETE - Delete student
-    @DeleteMapping("/{id}")
-    public String deleteStudent(@PathVariable Long id) {
-        service.deleteStudent(id);
-        return "Student deleted successfully.";
-    }
-}
-
-```
 ### 📄 3. DTO (Data Transfer Object) Layer
 🔹 Purpose:
 Used to send/receive data to/from frontend.
@@ -204,6 +162,49 @@ public class StudentController {
         return service.getAllStudents();
     }
 }
+```
+or for full ⤵️ < GET - Retrieve data (Read) > < POST - Create new data > < PUT - Update existing data > < DELETE - Remove data >
+```cs
+@RestController
+@RequestMapping("/api/students")
+@CrossOrigin(origins = "http://localhost:3000")
+public class StudentController {
+
+    @Autowired
+    private StudentService service;
+
+    // POST - Add new student
+    @PostMapping
+    public Student addStudent(@RequestBody StudentDTO dto) {
+        return service.saveStudent(dto);
+    }
+
+    // GET - All students
+    @GetMapping
+    public List<StudentDTO> getAll() {
+        return service.getAllStudents();
+    }
+
+    // GET - Student by ID
+    @GetMapping("/{id}")
+    public StudentDTO getById(@PathVariable Long id) {
+        return service.getStudentById(id);
+    }
+
+    // PUT - Update student
+    @PutMapping("/{id}")
+    public Student updateStudent(@PathVariable Long id, @RequestBody StudentDTO dto) {
+        return service.updateStudent(id, dto);
+    }
+
+    // DELETE - Delete student
+    @DeleteMapping("/{id}")
+    public String deleteStudent(@PathVariable Long id) {
+        service.deleteStudent(id);
+        return "Student deleted successfully.";
+    }
+}
+
 ```
 ### ⚙️ 7. application.properties
 🔹 Purpose:
